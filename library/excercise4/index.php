@@ -4,8 +4,8 @@ require_once(__DIR__ . '/../motor.php');
 
 Template::apply();
 
-$n2 = 2;
-$excercise = get_excercise($n2);
+$n4 = 4;
+$excercise = get_excercise($n4);
 
 if (!$excercise){
      echo '<h1 class="title">Ejercicio no encontrado</h1>
@@ -19,23 +19,22 @@ exit();
 
 $excercise = (object) $excercise;
 
-// Predicción de edad 🎂​
-// 🔗 API: https://api.agify.io/?name=meelad
+// Clima en República Dominicana 🌦️​
+// 🔗 API: [Usar una API como OpenWeather]
 // 📌 Descripción:
-// Ingresar un nombre y determinar la edad estimada de la persona.
-// Mostrar un mensaje indicando si es joven (👶), adulto (🧑) o anciano (👴).
-// Agregar una imagen relativa a cada categoría.
-// Formulario: Entrada de texto para el nombre.
+// Mostrar el clima actual en República Dominicana con iconos y temperatura.
+// Adaptar el diseño a las condiciones climáticas (sol ☀️, lluvia 🌧️, nublado ☁️).
+// Formulario: Entrada para buscar clima en una ciudad específica.
 
 ?>
 
 <h1 class="title"><?php echo $excercise->name; ?></h1>
 <h1 class="subtitle"><?php echo $excercise->description; ?></h1>
 
-<form method="post" action="result2.php" target="result">
+<form method="post" action="result4.php" target="result">
      <div class="field">
-          <label class="label">Nombre</label>
-          <input class="input" type="text" name="name"  placeholder="Pon tu nombre aqui" required>
+          <label class="label">Ciudad</label>
+          <input class="input" type="text" name="ciudad"  placeholder="Pon la ciudad de la cual quieres ver el clima" required>
      </div>
      <button class="button is-primary">Enviar</button>
 </form>

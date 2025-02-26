@@ -1,34 +1,38 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
 <?php
+$name = $_POST['name'];
 
-$name = $_POST['name'] ?? '';
-
-if (empty($name)) {
+if (!$_POST || !isset($_POST["name"])) {
     echo "Debes ingresar un nombre";
     exit();
 }
 
-$url = "https://api.genderize.io/?name=" . urlencode($name);
+$url = "https://api.genderize.io/?name={$name}";
 
-// Abrir la URL como un archivo
-$stream = fopen($url, 'r');
+$response = file_get_contents($url);
+$response = json_decode($response);
 
-if (!$stream) {
-    echo "Error al conectar con la API.";
-    exit();
-}
+$response->gender = ($response->gender == 'male') ? 'Masculino' : 'Femenino';
 
-// Leer el contenido de la respuesta
-$response = stream_get_contents($stream);
-
-// Cerrar el stream
-fclose($stream);
-
-// Decodificar JSON
-$data = json_decode($response, true);
-
-if ($data) {
-    var_dump($data);
+if ($response->gender == 'Masculino') {
+    echo "<style>body {background-color: #4a90e2;}</style>";
 } else {
-    echo "Error al procesar la respuesta.";
+    echo "<style>body {background-color: #ff69b4;}</style>";
 }
+
+echo "<hr>";
+
+echo "<div class='container'>";
+
+echo "<h1 class='title result-title'>Resultados</h1>";
+
+echo "<p>Nombre: {$name}</p>";
+
+echo "<p>Género: {$response->gender}</p>";
+
+$response->probability = $response->probability * 100;
+echo "<p>Probabilidad: {$response->probability}%</p>";
+
+echo "</div>";
 ?>
