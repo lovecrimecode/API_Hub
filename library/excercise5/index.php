@@ -37,7 +37,7 @@ $excercise = (object) $excercise;
 <form method="post" action="result5.php" target="result">
      <div class="field">
           <label class="label">Nombre del pokemon</label>
-          <input class="input" type="text" name="pokemon_name"  placeholder="Pon el nombre del pokemon aqui" required>
+          <input class="input" type="text" name="name"  placeholder="Pon el nombre del pokemon aqui" required>
      </div>
      <button class="button is-primary">Enviar</button>
 </form>
