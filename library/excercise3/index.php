@@ -24,12 +24,12 @@ $excercise = (object) $excercise;
 <h1 class="title"><?php echo $excercise->name; ?></h1>
 <h1 class="subtitle"><?php echo $excercise->description; ?></h1>
 
-<form method="post" action="result3.php" target="result">
+<form method="post" action="/library/excercise3/result3.php" target="result">
      <div class="field">
           <label class="label">Pais</label>
           <input class="input" type="text" name="country"  placeholder="Escribe un pais en ingles aqui" required>
      </div>
      <button class="button is-primary">Enviar</button>
 </form>
-
-<iframe name="result" style="width: 100%; height: 300px;"></iframe>
+<hr>
+<iframe name="result" style="width: 100%; height: 350px;"></iframe>

@@ -40,4 +40,4 @@ $excercise = (object) $excercise;
      <button class="button is-primary">Enviar</button>
 </form>
 
-<iframe name="result" style="width: 100%; height: 300px;"></iframe>
+<iframe name="result" style="width: 100%; height: 600px;"></iframe>

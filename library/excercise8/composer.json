@@ -1,0 +1,12 @@
+{
+    "name": "zelid/excercise8",
+    "authors": [
+        {
+            "name": "Zelidee",
+            "email": "zelideeguemez@gmail.com"
+        }
+    ],
+    "require": {
+        "doubleplus/imagepig": "^1.0"
+    }
+}

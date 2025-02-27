@@ -1,0 +1,58 @@
+{
+    "packages": [
+        {
+            "name": "doubleplus/imagepig",
+            "version": "1.0.8",
+            "version_normalized": "1.0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/double-plus/imagepig-php.git",
+                "reference": "60887d7d4062ed3430133ee993aa4d936c851913"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/double-plus/imagepig-php/zipball/60887d7d4062ed3430133ee993aa4d936c851913",
+                "reference": "60887d7d4062ed3430133ee993aa4d936c851913",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7"
+            },
+            "time": "2024-11-09T07:58:34+00:00",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Mises",
+                    "email": "pavel@double.plus",
+                    "homepage": "https://double.plus/",
+                    "role": "Founder"
+                }
+            ],
+            "description": "A composer library for Image Pig, the API for AI images.",
+            "homepage": "https://imagepig.com/",
+            "keywords": [
+                "AI images",
+                "api"
+            ],
+            "support": {
+                "issues": "https://github.com/double-plus/imagepig-php/issues",
+                "source": "https://github.com/double-plus/imagepig-php/tree/1.0.8"
+            },
+            "install-path": "../doubleplus/imagepig"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

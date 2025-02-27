@@ -30,7 +30,7 @@ $excercise = (object) $excercise;
 <h1 class="title"><?php echo $excercise->name; ?></h1>
 <h1 class="subtitle"><?php echo $excercise->description; ?></h1>
 
-<form method="post" action="result8.php" target="result">
+<form method="post" action="excercise8/result8.php" target="result">
      <div class="field">
           <label class="label">Palabra clave</label>
           <input class="input" type="text" name="keyword"  placeholder="Ingresa la palabra clave para convertir en imagen" required>
@@ -38,4 +38,4 @@ $excercise = (object) $excercise;
      <button class="button is-primary">Enviar</button>
 </form>
 
-<iframe name="result" style="width: 100%; height: 300px;"></iframe>
+<iframe name="result" style="width: 100%; height: 600px;"></iframe>

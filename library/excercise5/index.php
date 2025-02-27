@@ -34,7 +34,7 @@ $excercise = (object) $excercise;
 <h1 class="title"><?php echo $excercise->name; ?></h1>
 <h1 class="subtitle"><?php echo $excercise->description; ?></h1>
 
-<form method="post" action="result5.php" target="result">
+<form method="post" action="/library/excercise5/result5.php" target="result">
      <div class="field">
           <label class="label">Nombre del pokemon</label>
           <input class="input" type="text" name="name"  placeholder="Pon el nombre del pokemon aqui" required>

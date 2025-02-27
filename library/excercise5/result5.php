@@ -19,24 +19,27 @@ if (!$response) {
 }
 
 $photo = $response->sprites->front_default;
+$name = ucfirst($name);
 
 echo "<hr>";
 
-echo "<div class='container'>";
-echo "<h1 class='title result-title'>Resultados</h1>";
+echo "<section class='section'>
+<div class='container'>";
+echo "<h1 class='title result-title'>Resultados</h1><br>";
 
-echo "<h2>{$name}</h2>";
+echo "<h2 class='subtitle'><strong>Pokemon: </strong>{$name}</h2>";
 
 echo "<img src='$photo' alt='Foto de {$name}'>";
 
 echo "<p>Experiencia base: {$response->base_experience}</p>";
 
-echo "<h3>Habilidades</h3>
-<ul>
-<?php foreach($response->abilities as $ability): ?>
-<li> <?php echo $ability->ability->name; ?></li>
-<?php endforeach; ?>
-</ul>";
-
-echo "</div>";
+echo "<h3 class='subtitle' style='font:\"bold\";'>Habilidades</h3>
+<ul>";
+foreach ($response->abilities as $ability) {
+     echo "<li>{$ability->ability->name}</li>";
+}
+echo "
+</ul>
+</div>
+</section>";
 ?>

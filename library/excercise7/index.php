@@ -34,12 +34,13 @@ $excercise = (object) $excercise;
 <h1 class="title"><?php echo $excercise->name; ?></h1>
 <h1 class="subtitle"><?php echo $excercise->description; ?></h1>
 
-<form method="post" action="result7.php" target="result">
+<form method="post" action="/library/excercise7/result7.php" target="result">
      <div class="field">
           <label class="label">Dinero en dolares</label>
-          <input class="input" type="text" name="dollars"  placeholder="USD" required>
+          <input class="input" type="float" name="dollars"  placeholder="USD" required>
      </div>
      <button class="button is-primary">Enviar</button>
-</form>
+</form> 
+<hr>
 
-<iframe name="result" style="width: 100%; height: 300px;"></iframe>
+<iframe name="result" style="width: 100%; height: 600px;"></iframe>
