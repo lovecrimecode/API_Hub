@@ -26,8 +26,8 @@ $excercise = (object) $excercise;
 
 <form method="post" action="/library/excercise3/result3.php" target="result">
      <div class="field">
-          <label class="label">Pais</label>
-          <input class="input" type="text" name="country"  placeholder="Escribe un pais en ingles aqui" required>
+          <label class="label">Escribe un pais en ingles aqui</label>
+          <input class="input" type="text" name="country" required>
      </div>
      <button class="button is-primary">Enviar</button>
 </form>

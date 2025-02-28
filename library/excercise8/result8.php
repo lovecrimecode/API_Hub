@@ -1,48 +1,74 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-
 <?php
-//require'vendor/autoload.php';
-//use ImagePig\ImagePig;
 
 $keyword = $_POST['keyword'];
 
-if (!$_POST || !isset($_POST["keyword"])) {
-    echo "Debes ingresar un nombre";
+if (empty($keyword)) {
+    echo "Debes ingresar una palabra clave.";
     exit();
 }
 
-$apiKey = 'd8fb5199-ab71-4d2c-95ce-ed6356c43db2'; // Reemplaza con tu API key
-$imagepig = ImagePig\ImagePig($apiKey);
+// URL de la API
+$apiUrl = 'https://api.imagepig.com/';
 
-try {
-    $result = $imagepig->default('$keyword');
-    $imageData = $result->getData(); // Obtiene los datos de la imagen
+// Tu clave de API (cámbiala por la real)
+$apiKey = 'd8fb5199-ab71-4d2c-95ce-ed6356c43db2';
 
-    // Establece los encabezados HTTP para mostrar la imagen en el navegador
-    header('Content-Type: image/jpeg'); // Ajusta el tipo de contenido según el formato de la imagen
-    header('Content-Length: ' . strlen($imageData));
+// Construcción del JSON correcto
+$data = json_encode(['prompt' => $keyword]);
 
-    // Muestra los datos de la imagen
-    echo $imageData;
+// Inicializar cURL
+$ch = curl_init($apiUrl);
 
-} catch (Exception $e) {
-    // Si hay un error, envía un encabezado de error y muestra el mensaje
-    header('HTTP/1.1 500 Internal Server Error');
-    echo "Error: " . $e->getMessage();
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // ❌ Desactiva verificación SSL (solo para pruebas)
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+// Agregar encabezados HTTP (importante para evitar errores 422)
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json',
+    'Accept: application/json',
+    'api-key: ' . $apiKey,
+    'User-Agent: Mozilla/5.0'
+]);
+
+// Ejecutar la solicitud y obtener respuesta
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+// Verificar si hubo error
+if (curl_errno($ch)) {
+    echo 'Error de cURL: ' . curl_error($ch);
+    curl_close($ch);
+    exit();
 }
 
-// echo "<hr>";
+curl_close($ch);
 
-// echo "<div class='container'>";
+// Verificar código de respuesta HTTP
+if ($httpCode !== 200) {
+    echo "Error en la solicitud a la API. Código HTTP: $httpCode. Respuesta: $response";
+    exit();
+}
 
-// echo "<h1 class='title result-title'>Resultados</h1>";
+// Decodificar respuesta JSON
+$responseData = json_decode($response, true);
 
-// echo "<p>Nombre: {$name}</p>";
+// Verificar si la API devolvió una imagen
+if (isset($responseData['image_data'])) {
+    $imageData = $responseData['image_data'];
 
-// echo "<p>Género: {$response->gender}</p>";
-
-// $response->probability = $response->probability * 100;
-// echo "<p>Probabilidad: {$response->probability}%</p>";
-
-// echo "</div>";
+    // Mostrar la imagen en el navegador
+    echo "<hr>";
+    echo "<div class='container'>";
+    echo "<h1 class='title result-title'>Resultados</h1>";
+    echo "<p>Palabra clave para generar la imagen: {$keyword}</p>";
+    echo "<p>Imagen generada:</p>";
+    echo "<img src='data:image/jpeg;base64,{$imageData}' alt='Imagen generada' width='80%' align='center'>";
+    echo "</div>";
+} else {
+    echo "No se pudo generar la imagen. Respuesta de la API: " . print_r($responseData, true);
+}
 ?>

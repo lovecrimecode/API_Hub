@@ -19,16 +19,6 @@ exit();
 
 $excercise = (object) $excercise;
 
-// ### **Predicción de género** 👦👧
-
-// 🔗 API: [`https://api.genderize.io/?name=irma`](https://api.genderize.io/?name=irma)
-
-// 📌 **Descripción:**
-
-// - Ingresar un **nombre** en un formulario y predecir si es **masculino** o **femenino**.
-// - **Si es masculino**, mostrar algo en **azul** 💙; **si es femenino**, en **rosa** 💖.
-// - **Formulario:** Entrada de texto para el nombre
-
 ?>
 
 <h1 class="title"><?php echo $excercise->name; ?></h1>
@@ -42,4 +32,4 @@ $excercise = (object) $excercise;
      <button class="button is-primary">Enviar</button>
 </form>
 
-<iframe name="result" style="width: 100%; height: 300px;"></iframe>
+<iframe name="result" style="width: 300px; height: 900px;"></iframe>

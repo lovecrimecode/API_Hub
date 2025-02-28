@@ -31,10 +31,10 @@ $excercise = (object) $excercise;
 <h1 class="title"><?php echo $excercise->name; ?></h1>
 <h1 class="subtitle"><?php echo $excercise->description; ?></h1>
 
-<form method="post" action="result4.php" target="result">
+<form method="post" action="/library/excercise4/result4.php" target="result">
      <div class="field">
-          <label class="label">Ciudad</label>
-          <input class="input" type="text" name="ciudad"  placeholder="Pon la ciudad de la cual quieres ver el clima" required>
+          <label class="label">Ingresa una ciudad de la República Dominicana para ver el clima actual</label>
+          <input class="input" type="text" name="city"  placeholder="Pon la ciudad de la cual quieres ver el clima" required>
      </div>
      <button class="button is-primary">Enviar</button>
 </form>

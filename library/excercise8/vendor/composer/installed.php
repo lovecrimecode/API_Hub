@@ -3,7 +3,7 @@
         'name' => 'zelid/excercise8',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '60938e942f3f80b1ac042a738d16347d8a43893c',
+        'reference' => 'fe6df257b20616dcaf36ba99ea863a40b27159b1',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'zelid/excercise8' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '60938e942f3f80b1ac042a738d16347d8a43893c',
+            'reference' => 'fe6df257b20616dcaf36ba99ea863a40b27159b1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

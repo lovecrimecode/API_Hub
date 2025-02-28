@@ -15,13 +15,9 @@ $response = json_decode($response);
 
 $response->rates->DOP = $response->rates->DOP * $dollars;
 
-echo "<hr>";
-
 echo "<div class='container'>";
 
 echo "<h1 class='title result-title'>Resultados</h1>";
-
-echo "<p>USD: {$dollars}</p>";
 
 echo "<p>{$dollars} USD = {$response->rates->DOP} RDS</p><br>";
 

@@ -33,7 +33,7 @@ $excercise = (object) $excercise;
 <h1 class="title"><?php echo $excercise->name; ?></h1>
 <h1 class="subtitle"><?php echo $excercise->description; ?></h1>
 
-<form method="post" action="result9.php" target="result">
+<form method="post" action="./excercise9/result9.php" target="result">
      <div class="field">
           <label class="label">Pais</label>
           <input class="input" type="text" name="country"  placeholder="Pon un pais aqui" required>

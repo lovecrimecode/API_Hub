@@ -1,5 +1,4 @@
 <?php
-
 require_once(__DIR__ . '/../motor.php');
 
 Template::apply();
@@ -28,17 +27,13 @@ $excercise = (object) $excercise;
 // - Mostrar un **chiste aleatorio** cada vez que el usuario visite la página.
 // - **No necesita formulario**.
 
+echo "<h1 class='title'>{$excercise->name}</h1>
+<h1 class='subtitle'>{$excercise->description}</h1>
+";
+
+$joke = file_get_contents('https://official-joke-api.appspot.com/random_joke');
+
+$joke = json_decode($joke);
+
+echo "<p>{$joke->setup}<br>{$joke->punchline}</p>";
 ?>
-
-<h1 class="title"><?php echo $excercise->name; ?></h1>
-<h1 class="subtitle"><?php echo $excercise->description; ?></h1>
-
-<form method="post" action="result10.php" target="result">
-     <div class="field">
-          <label class="label">Nombre</label>
-          <input class="input" type="text" name="name"  placeholder="Pon tu nombre aqui" required>
-     </div>
-     <button class="button is-primary">Enviar</button>
-</form>
-
-<iframe name="result" style="width: 100%; height: 300px;"></iframe>
