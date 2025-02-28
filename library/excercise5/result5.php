@@ -10,18 +10,18 @@ if (!$_POST || !isset($_POST["name"])) {
 
 $url = "https://pokeapi.co/api/v2/pokemon/{$name}";
 
-$response = file_get_contents($url);
-$response = json_decode($response);
+$response = @file_get_contents($url);
 
-if (!$response) {
+if ($response === FALSE) {
+     http_response_code(404);
      echo "No se encontró el Pokémon";
      exit();
 }
 
+$response = json_decode($response);
+
 $photo = $response->sprites->front_default;
 $name = ucfirst($name);
-
-echo "<hr>";
 
 echo "<section class='section'>
 <div class='container'>";

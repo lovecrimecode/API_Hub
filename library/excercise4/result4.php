@@ -28,7 +28,7 @@ if ($response->current->is_day == 1 && $response->current->condition->code == "1
      echo '<style>body { background: url("https://media.istockphoto.com/id/1317255877/es/foto/agradable-fondo-de-panorama-cielo-azul-vac%C3%ADo-sin-nubes.jpg?b=1&s=170667a&w=0&k=20&c=_Gb8OuvK9gnIMHbAgn_WRUeRs2Bqjp4H9sk1iVok6Ms=") no-repeat center center fixed; background-size: cover; }</style>';
 } else {
      $response->current->condition->text = "Despejado";
-     echo "<style>body {background: 'https://zonaj.net/imgupload/Cielo-nocturno_tP2oHk.jpg';}</style>";
+     echo '<style>body {background: url("https://zonaj.net/imgupload/Cielo-nocturno_tP2oHk.jpg")</style>")';
 }
 
 switch ($response->current->condition->code) {

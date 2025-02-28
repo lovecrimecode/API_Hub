@@ -19,14 +19,6 @@ exit();
 
 $excercise = (object) $excercise;
 
-// Predicción de edad 🎂​
-// 🔗 API: https://api.agify.io/?name=meelad
-// 📌 Descripción:
-// Ingresar un nombre y determinar la edad estimada de la persona.
-// Mostrar un mensaje indicando si es joven (👶), adulto (🧑) o anciano (👴).
-// Agregar una imagen relativa a cada categoría.
-// Formulario: Entrada de texto para el nombre.
-
 ?>
 
 <h1 class="title"><?php echo $excercise->name; ?></h1>
@@ -34,7 +26,7 @@ $excercise = (object) $excercise;
 
 <form method="post" action="result2.php" target="result">
      <div class="field">
-          <label class="label">Nombre</label>
+          <label class="label">Predictor de edad segun el nombre</label>
           <input class="input" type="text" name="name"  placeholder="Pon tu nombre aqui" required>
      </div>
      <button class="button is-primary">Enviar</button>

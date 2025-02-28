@@ -25,7 +25,7 @@ require_once __DIR__ . '/../template.php';
                          Inicio
                     </a>
 
-                    <a class="navbar-item" href="about.php">
+                    <a class="navbar-item" href="/about.php">
                          Acerca de
                     </a>
 

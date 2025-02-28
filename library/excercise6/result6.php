@@ -26,14 +26,14 @@ echo "<hr>";
 
 echo "<div class='container'>";
 
-echo "<img src='$icon' alt='Imagen no disponible' class='image' style='width: 100%; height: 100%;'>";
+echo "<img src='$icon' alt='Imagen no disponible' class='image' style='width: 100%; height: 70%;'>";
 echo "<br>";
 
 for ($i = 0; $i < 3; $i++) {
      $post = $posts[$i]; // Obtener el post actual
      echo "<h2 class='title'>{$post['title']['rendered']}</h2><br>";
      echo "<p>{$post['excerpt']['rendered']}</p><br>";
-     echo "<a href='{$post['link']}' class='link'>Leer más</a><hr><br>";
+     echo "<a href='{$post['link']}' class='link' target='_blank'>Leer más</a><hr><br>";
  }
 echo "</div>";
 ?>

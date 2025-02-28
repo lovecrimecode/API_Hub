@@ -18,15 +18,6 @@ exit();
 
 $excercise = (object) $excercise;
 
-// ### **Generador de chistes** 🤣
-
-// 🔗 API: [`https://official-joke-api.appspot.com/random_joke`](https://official-joke-api.appspot.com/random_joke)
-
-// 📌 **Descripción:**
-
-// - Mostrar un **chiste aleatorio** cada vez que el usuario visite la página.
-// - **No necesita formulario**.
-
 echo "<h1 class='title'>{$excercise->name}</h1>
 <h1 class='subtitle'>{$excercise->description}</h1>
 ";
@@ -35,5 +26,8 @@ $joke = file_get_contents('https://official-joke-api.appspot.com/random_joke');
 
 $joke = json_decode($joke);
 
-echo "<p>{$joke->setup}<br>{$joke->punchline}</p>";
+echo "<div class='box' style='background-color:hsl(233, 100%, 63%);'>
+     <p class='content' style='font-size: 18px;'>{$joke->setup}<br><strong>{$joke->punchline}</strong></p>
+     <button class='button is-primary' onclick='location.reload()'>Otro chiste</button>
+      </div>";
 ?>

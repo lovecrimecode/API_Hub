@@ -26,10 +26,10 @@ $excercise = (object) $excercise;
 
 <form method="post" action="excercise8/result8.php" target="result">
      <div class="field">
-          <label class="label">Palabra clave</label>
-          <input class="input" type="text" name="keyword"  placeholder="Ingresa la palabra clave para convertir en imagen" required>
+          <label class="label">Ingresa la palabra clave para convertir en imagen</label>
+          <input class="input" type="text" name="keyword"  placeholder="Palabra clave" required>
      </div>
      <button class="button is-primary">Enviar</button>
 </form>
 
-<iframe name="result" style="width: 100%; height: 600px;"></iframe>
+<iframe name="result" style="width: 100%; height: 1000px;"></iframe>

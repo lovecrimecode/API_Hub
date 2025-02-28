@@ -1,51 +1,40 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 
 <?php
-
-if (empty(trim($_POST['country'])) || !isset($_POST["country"])) {
-    echo "Debes ingresar un pais valido";
-    exit();
+if (empty(trim($_POST['country']))) {
+    exit("Debes ingresar un país válido");
 }
 
-$country = trim($_POST['country']);
-$country = urlencode($country);
-
+$country = rawurlencode(trim($_POST['country']));
 $url = "https://restcountries.com/v3.1/name/{$country}";
 
 $response = @file_get_contents($url);
-$response = json_decode($response);
+$data = json_decode($response, true)[0] ?? null;
 
-if (!$response || isset($response['message'])) {
-    $url= "https://restcountries.com/v3.1/translation/{$country}";
+if (!$data) {
+    $url = "https://restcountries.com/v3.1/translation/{$country}";
     $response = @file_get_contents($url);
-    $response = json_decode($response);
-    if (!$response || isset($response['message'])) {
-        echo "No se encontró información sobre el pais";
-        exit();
-    }
+    $data = json_decode($response, true)[0] ?? null;
 }
 
-$country_data = $response[0];
-$name = $country_data->name->common;
-$capital = $country_data->capital[0];
-$population = number_format($country_data->population);
-$currency_code = array_key_first((array)$country_data->currencies);
-$currency = $country_data->currencies->{$currency_code}->name;
-$flag = $country_data->flags->png;
+if (!$data) {
+    exit("País no encontrado");
+}
 
-echo "<hr>";
+$name = $data['name']['common'] ?? "Desconocido";
+$capital = $data['capital'][0] ?? "Desconocida";
+$population = isset($data['population']) ? number_format($data['population']) : "Desconocida";
+$currency = isset($data['currencies']) ? implode(", ", array_column($data['currencies'], 'name')) : "Desconocida";
+$flag = $data['flags']['png'] ?? "";
 
 echo "<div class='container'>";
-
-echo "<h1 class='title result-title'>Resultados</h1>";
-
-echo "<p>Nombre: {$name}</p>";
-
-echo "<p>Capital: {$capital}</p><br>";
-echo "<p>Población: {$population}</p><br>";
-echo "<p>Moneda: {$currency}</p><br>";
-
-echo "<img src='{$flag}' alt='Bandera no encontrada' width='80%' align='center'>";
-
+echo "<h1 class='title'>Resultados</h1>";
+echo "<p><strong>Nombre:</strong> {$name}</p>";
+echo "<p><strong>Capital:</strong> {$capital}</p>";
+echo "<p><strong>Población:</strong> {$population}</p>";
+echo "<p><strong>Moneda:</strong> {$currency}</p>";
+if ($flag) {
+    echo "<img src='{$flag}' alt='Bandera de {$name}' width='80%'>";
+}
 echo "</div>";
 ?>

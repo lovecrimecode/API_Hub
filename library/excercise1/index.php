@@ -26,7 +26,7 @@ $excercise = (object) $excercise;
 
 <form method="post" action="result1.php" target="result">
      <div class="field">
-          <label class="label">Nombre</label>
+          <label class="label">Predice tu genero segun tu nombre</label>
           <input class="input" type="text" name="name"  placeholder="Pon tu nombre aqui" required>
      </div>
      <button class="button is-primary">Enviar</button>
