@@ -100,7 +100,7 @@
             <div class="icon">
                 <i class="<?php echo $ageIcon; ?>"></i>
             </div>
-            <h1 class="title is-2 has-text-white mb-2">¡Resultado Obtenido!</h1>
+            <h1 class="title is-2 has-text-white mb-2">¡Edad predecida!</h1>
             <p class="subtitle is-5 has-text-white">Análisis completado con éxito</p>
         </div>
 

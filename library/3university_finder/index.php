@@ -31,6 +31,7 @@ $excercise = (object) $excercise;
      <h2 class="subtitle has-text-white is-size-5"><?php echo $excercise->description; ?></h2>
 </div>
 
+<div class="form-container">
      <form method="post" action="result3.php" target="result" id="universityForm">
           <div class="field">
                <label class="label is-size-5">
@@ -43,11 +44,7 @@ $excercise = (object) $excercise;
                          name="country"
                          placeholder="Escribe el nombre del país aquí..."
                          required>
-                    <span class="icon is-left">
-                         <i class="fas fa-globe"></i>
-                    </span>
                </div>
-               <p class="help">Buscaremos universidades en el país especificado</p>
           </div>
 
           <div class="field">
@@ -59,16 +56,16 @@ $excercise = (object) $excercise;
                </div>
           </div>
      </form>
+</div>
 
-     <div class="feature-card">
-          <h4 class="has-text-weight-semibold mb-2">
-               <i class="fas fa-info-circle mr-2 has-text-info"></i>
-               ¿Cómo funciona?
-          </h4>
-          <p class="is-size-7">
-               Utilizamos la API de Hipolabs para listar universidades por país.
-          </p>
-     </div>
+<div class="feature-card">
+     <h4 class="has-text-weight-semibold mb-2">
+          <i class="fas fa-info-circle mr-2 has-text-info"></i>
+          ¿Cómo funciona?
+     </h4>
+     <p class="is-size-7">
+          Utilizamos la API de Hipolabs para listar universidades por país.
+     </p>
 </div>
 
 <div class="result-container">
@@ -82,6 +79,7 @@ $excercise = (object) $excercise;
      </div>
      <iframe name="result" class="results-iframe" id="resultsFrame"></iframe>
 </div>
+<hr>
 
 <div class="notification is-info is-light">
      <h4 class="title is-5">

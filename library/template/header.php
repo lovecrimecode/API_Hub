@@ -28,20 +28,13 @@ require_once __DIR__ . '/../template.php';
                     </a>
                </div>
 
-               <div id="navbarMenu" class="navbar-menu">
-                    <div class="navbar-start">
-                         <a class="navbar-item" href="/">
-                              <i class="fas fa-home mr-2"></i>
-                              Inicio
-                         </a>
-
                          <a class="navbar-item" href="/about.php">
                               <i class="fas fa-info-circle mr-2"></i>
                               Acerca de
                          </a>
 
                          <div class="navbar-item has-dropdown is-hoverable">
-                              <a class="navbar-link">
+                              <a class="navbar-item">
                                    <i class="fas fa-tasks mr-2"></i>
                                    Ejercicios
                               </a>
@@ -56,7 +49,6 @@ require_once __DIR__ . '/../template.php';
                                    ?>
                               </div>
                          </div>
-                    </div>
                </div>
      </nav>
 

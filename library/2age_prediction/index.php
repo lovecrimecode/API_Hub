@@ -32,11 +32,6 @@ $excercise = (object) $excercise;
 </div>
 
 <div class="form-container">
-     <h3 class="title is-4 has-text-centered mb-4">
-          <i class="fas fa-magic mr-2" style="color: #667eea;"></i>
-          Predicción de Edad
-     </h3>
-
      <form method="post" action="result2.php" target="result" id="ageForm">
           <div class="field">
                <label class="label is-size-5">
@@ -50,11 +45,7 @@ $excercise = (object) $excercise;
                          placeholder="Escribe tu nombre aquí..."
                          required
                          autocomplete="given-name">
-                    <span class="icon is-left">
-                         <i class="fas fa-user"></i>
-                    </span>
                </div>
-               <p class="help">Utilizaremos IA para predecir tu edad basándose en tu nombre</p>
           </div>
 
           <div class="field">
@@ -78,7 +69,7 @@ $excercise = (object) $excercise;
      </div>
 </div>
 
-<div class="container">
+<div class="result-container">
      <div class="loading-overlay" id="loadingOverlay">
           <div class="has-text-centered">
                <div class="spinner-border" role="status">
@@ -87,8 +78,9 @@ $excercise = (object) $excercise;
                <p class="mt-3 has-text-weight-semibold">Analizando tu nombre...</p>
           </div>
      </div>
-     
+     <iframe name="result" class="results-iframe" id="resultsFrame"></iframe>
 </div>
+<hr>
 
 <div class="notification is-info is-light">
      <h4 class="title is-5">

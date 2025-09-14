@@ -1,8 +1,6 @@
-</div> <!-- Cierre del container -->
-</section> <!-- Cierre de la section -->
+</section> 
 
 <footer class="footer has-background-dark">
-     <div class="container">
           <div class="columns">
 
                <div class="column is-6">
@@ -15,6 +13,8 @@
                          <span class="tag is-info">Bulma CSS</span>
                          <span class="tag is-success">JavaScript</span>
                          <span class="tag is-warning">API REST</span>
+                         <span class="tag is-danger">HTML5</span>
+                         <span class="tag is-link">CSS3</span>
                     </div>
                </div>
 
@@ -33,21 +33,10 @@
                     </p>
                </div>
           </div>
-
-          <!-- <hr class="has-background-grey">
-
-          <div class="has-text-centered">
-               <p class="has-text-grey-light">
-                    <i class="fas fa-heart has-text-danger mr-1"></i>
-                    Hecho con pasión por el desarrollo web
-               </p>
-          </div> -->
-     </div>
 </footer>
 
 <style>
      .footer {
-          margin-top: 3rem;
           background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
           box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
      }

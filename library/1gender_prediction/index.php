@@ -31,70 +31,57 @@ $excercise = (object) $excercise;
      <h2 class="subtitle has-text-white is-size-5"><?php echo $excercise->description; ?></h2>
 </div>
 
-<div class="columns is-desktop">
-     <div class="column is-6">
-          <div class="form-container">
-               <h3 class="title is-4 has-text-centered mb-4">
-                    <i class="fas fa-magic mr-2" style="color: #667eea;"></i>
-                    Predicción de Género
-               </h3>
+<div class="form-container">
 
-               <form method="post" action="result1.php" target="result" id="genderForm">
-                    <div class="field">
-                         <label class="label is-size-5">
-                              <i class="fas fa-user mr-2"></i>
-                              Ingresa tu nombre
-                         </label>
-                         <div class="control has-icons-left">
-                              <input class="input is-large custom-input"
-                                   type="text"
-                                   name="name"
-                                   placeholder="Escribe tu nombre aquí..."
-                                   required
-                                   autocomplete="given-name">
-                              <span class="icon is-left">
-                                   <i class="fas fa-user"></i>
-                              </span>
-                         </div>
-                         <p class="help">Utilizaremos IA para predecir tu género basándose en tu nombre</p>
-                    </div>
-
-                    <div class="field">
-                         <div class="control has-text-centered">
-                              <button class="button is-primary is-large submit-button" type="submit">
-                                   <i class="fas fa-search mr-2"></i>
-                                   Predecir Género
-                              </button>
-                         </div>
-                    </div>
-               </form>
-
-               <div class="feature-card">
-                    <h4 class="has-text-weight-semibold mb-2">
-                         <i class="fas fa-info-circle mr-2 has-text-info"></i>
-                         ¿Cómo funciona?
-                    </h4>
-                    <p class="is-size-7">
-                         Utilizamos la API de Genderize.io que analiza millones de nombres
-                         para determinar la probabilidad de género basándose en datos estadísticos.
-                    </p>
+     <form method="post" action="result1.php" target="result" id="genderForm">
+          <div class="field">
+               <label class="label is-size-5">
+                    <i class="fas fa-user mr-2"></i>
+                    Ingresa tu nombre
+               </label>
+               <div class="control has-icons-left">
+                    <input class="input is-large custom-input"
+                         type="text"
+                         name="name"
+                         placeholder="Escribe tu nombre aquí..."
+                         required
+                         autocomplete="given-name">
                </div>
           </div>
-     </div>
 
-     <div class="column is-6">
-          <div class="result-container">
-               <div class="loading-overlay" id="loadingOverlay">
-                    <div class="has-text-centered">
-                         <div class="spinner-border" role="status">
-                              <i class="fas fa-spinner fa-spin fa-2x has-text-primary"></i>
-                         </div>
-                         <p class="mt-3 has-text-weight-semibold">Analizando tu nombre...</p>
-                    </div>
+          <div class="field">
+               <div class="control has-text-centered">
+                    <button class="button is-primary is-large submit-button" type="submit">
+                         <i class="fas fa-search mr-2"></i>
+                         Predecir Género
+                    </button>
                </div>
-               <iframe name="result" class="results-iframe" id="resultsFrame"></iframe>
+          </div>
+     </form>
+</div>
+
+<div class="feature-card">
+     <h4 class="has-text-weight-semibold mb-2">
+          <i class="fas fa-info-circle mr-2 has-text-info"></i>
+          ¿Cómo funciona?
+     </h4>
+     <p class="is-size-7">a
+          Utilizamos la API de Genderize.io que analiza millones de nombres
+          para determinar la probabilidad de género basándose en datos estadísticos.
+     </p>
+</div>
+
+<div class="result-container">
+     <div class="loading-overlay" id="loadingOverlay">
+          <div class="has-text-centered">
+               <div class="spinner-border" role="status">
+                    <i class="fas fa-spinner fa-spin fa-2x has-text-primary"></i>
+               </div>
+               <p class="mt-3 has-text-weight-semibold">Analizando tu nombre...</p>
           </div>
      </div>
+     <iframe name="result" class="results-iframe" id="resultsFrame"></iframe>
+</div>
 </div>
 
 <div class="notification is-info is-light">
