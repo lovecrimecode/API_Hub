@@ -8,34 +8,34 @@ function get_excercise ($number) {
 function get_excercises_list() {
      $excercises = array(
      1=> array(
-          'name'=>'Ejercicio 1',
-          'description'=> 'Predicción de género👦👧',
-          'url'=> '/library/excercise1/',
+          'name'=> 'Predicción de género',
+          'description'=> 'Predicción de género basándose en el nombre👦👧',
+          'url'=> '/library/1gender_prediction/',
      ),
      2=> array(
-          'name'=>'Ejercicio 2',
-          'description'=> 'Predicción de edad🎂',
-          'url'=> '/library/excercise2/',
+          'name'=> 'Predicción de edad',
+          'description'=> '🎂',
+          'url'=> '/library/2age_prediction/',
      ),
      3=> array(
-          'name'=>'Ejercicio 3',
-          'description'=> 'Universidades de un país🎓',
-          'url'=> '/library/excercise3',
+          'name'=> 'Universidades de un país',
+          'description'=> 'Búsqueda de Universidades por país',
+          'url'=> '/library/3university_finder/',
      ),
      4=> array(
-          'name'=>'Ejercicio 4',
-          'description'=> 'Clima en República Dominicana🌞',
-          'url'=> '/library/excercise4',
+          'name'=> 'Clima en República Dominicana',
+          'description'=> '🌞',
+          'url'=> '/library/4rep_dom_weather/',
      ),
      5=> array(
-          'name'=>'Ejercicio 5',
-          'description'=> 'Información de un Pokémon⚡',
-          'url'=> '/library/excercise5',
+          'name'=> 'Información de un Pokémon',
+          'description'=> '⚡',
+          'url'=> '/library/5pokemon_info',
      ),
      6=> array(
-          'name'=>'Ejercicio 6',
-          'description'=> 'Noticias desde WordPress📰',
-          'url'=> '/library/excercise6',
+          'name'=> 'Noticias desde WordPress',
+          'description'=> '📰',
+          'url'=> '/library/6wordpress_news',
      ),
      7=> array(
           'name'=>'Ejercicio 7',

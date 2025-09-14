@@ -1,0 +1,143 @@
+<?php
+require_once(__DIR__ . '/../motor.php');
+Template::apply();
+
+$n1 = 1;
+$excercise = get_excercise($n1);
+
+if (!$excercise) {
+     echo '<div class="notification is-danger">
+          <h1 class="title has-text-white">
+               <i class="fas fa-exclamation-triangle mr-2"></i>
+               Ejercicio no encontrado
+          </h1>
+          <p class="subtitle has-text-white">El ejercicio que buscas no existe.</p>
+          <a href="./" class="button is-light">
+               <i class="fas fa-arrow-left mr-2"></i>
+               Volver al inicio
+          </a>
+     </div>';
+     exit();
+}
+
+$excercise = (object) $excercise;
+?>
+
+<div class="exercise-header">
+     <div class="icon-wrapper">
+          <i class="fas fa-user-friends fa-2x"></i>
+     </div>
+     <h1 class="title has-text-white is-size-2"><?php echo $excercise->name; ?></h1>
+     <h2 class="subtitle has-text-white is-size-5"><?php echo $excercise->description; ?></h2>
+</div>
+
+<div class="columns is-desktop">
+     <div class="column is-6">
+          <div class="form-container">
+               <h3 class="title is-4 has-text-centered mb-4">
+                    <i class="fas fa-magic mr-2" style="color: #667eea;"></i>
+                    Predicción de Género
+               </h3>
+
+               <form method="post" action="result1.php" target="result" id="genderForm">
+                    <div class="field">
+                         <label class="label is-size-5">
+                              <i class="fas fa-user mr-2"></i>
+                              Ingresa tu nombre
+                         </label>
+                         <div class="control has-icons-left">
+                              <input class="input is-large custom-input"
+                                   type="text"
+                                   name="name"
+                                   placeholder="Escribe tu nombre aquí..."
+                                   required
+                                   autocomplete="given-name">
+                              <span class="icon is-left">
+                                   <i class="fas fa-user"></i>
+                              </span>
+                         </div>
+                         <p class="help">Utilizaremos IA para predecir tu género basándose en tu nombre</p>
+                    </div>
+
+                    <div class="field">
+                         <div class="control has-text-centered">
+                              <button class="button is-primary is-large submit-button" type="submit">
+                                   <i class="fas fa-search mr-2"></i>
+                                   Predecir Género
+                              </button>
+                         </div>
+                    </div>
+               </form>
+
+               <div class="feature-card">
+                    <h4 class="has-text-weight-semibold mb-2">
+                         <i class="fas fa-info-circle mr-2 has-text-info"></i>
+                         ¿Cómo funciona?
+                    </h4>
+                    <p class="is-size-7">
+                         Utilizamos la API de Genderize.io que analiza millones de nombres
+                         para determinar la probabilidad de género basándose en datos estadísticos.
+                    </p>
+               </div>
+          </div>
+     </div>
+
+     <div class="column is-6">
+          <div class="result-container">
+               <div class="loading-overlay" id="loadingOverlay">
+                    <div class="has-text-centered">
+                         <div class="spinner-border" role="status">
+                              <i class="fas fa-spinner fa-spin fa-2x has-text-primary"></i>
+                         </div>
+                         <p class="mt-3 has-text-weight-semibold">Analizando tu nombre...</p>
+                    </div>
+               </div>
+               <iframe name="result" class="results-iframe" id="resultsFrame"></iframe>
+          </div>
+     </div>
+</div>
+
+<div class="notification is-info is-light">
+     <h4 class="title is-5">
+          <i class="fas fa-lightbulb mr-2"></i>
+          Datos Curiosos
+     </h4>
+     <div class="columns">
+          <div class="column">
+               <p><strong>Precisión:</strong> La API tiene una precisión promedio del 85-90%</p>
+          </div>
+          <div class="column">
+               <p><strong>Base de datos:</strong> Analiza más de 216,000 nombres únicos</p>
+          </div>
+          <div class="column">
+               <p><strong>Cobertura:</strong> Funciona con nombres de 79 países diferentes</p>
+          </div>
+     </div>
+</div>
+
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('genderForm');
+          const loadingOverlay = document.getElementById('loadingOverlay');
+          const resultsFrame = document.getElementById('resultsFrame');
+
+          form.addEventListener('submit', function() {
+               loadingOverlay.classList.add('is-active');
+
+               // Hide loading after iframe loads
+               resultsFrame.addEventListener('load', function() {
+                    setTimeout(() => {
+                         loadingOverlay.classList.remove('is-active');
+                    }, 500);
+               });
+          });
+
+          // Add enter key support
+          form.addEventListener('keypress', function(e) {
+               if (e.key === 'Enter') {
+                    e.preventDefault();
+                    form.submit();
+               }
+          });
+     });
+</script>
