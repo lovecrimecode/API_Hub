@@ -83,6 +83,7 @@
      document.addEventListener('mousedown', function() {
           document.body.classList.remove('keyboard-navigation');
      });
+     
 </script>
 
 </body>

@@ -14,6 +14,7 @@
 }
 
 .navbar-brand .navbar-item {
+     color: white;
      font-weight: 700;
      font-size: 1.5rem;
      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -21,6 +22,7 @@
 
 .navbar-item:hover {
      background-color: rgba(255, 255, 255, 0.15) !important;
+     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
      color: white !important;
 }
 
@@ -186,6 +188,10 @@ body {
      overflow: hidden;
 }
 
+.title.is-4.mb-2 {
+     color: #040112;
+     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 .probability-bar {
      background: #e9ecef;
      border-radius: 10px;
@@ -224,7 +230,7 @@ body {
 }
 
 .result-container {
-     margin: 0 auto;
+     margin: 1 auto;
      border-radius: 16px;
      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
      backdrop-filter: blur(10px);
@@ -234,14 +240,12 @@ body {
 
 .results-iframe {
      width: 100%;
-     max-width: 800px;
-     height: 500px;
+     max-height: auto;
      border: none;
      border-radius: 12px;
-     display: block;
+     display: none;
      margin: 0 auto;
 }
-
 
 @keyframes slideInUp {
      from {
@@ -255,7 +259,7 @@ body {
 }
 
 .result-header {
-     padding-top: 4rem;
+     padding-top: 2rem;
      padding: 2rem;
      text-align: center;
      color: white;
@@ -364,4 +368,52 @@ body {
      .icon {
           font-size: 3rem;
      }
+}
+
+/* Table Container */
+.table-container {
+    margin: 1.5rem 0;
+    overflow-x: auto; /* Ensures responsiveness for wide tables */
+}
+
+/* Table Styles */
+.table {
+    background: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb; /* Light border for definition */
+}
+
+.table th {
+    background: #f1f5f9; /* Light gray for headers */
+    color: #1f2937; /* Dark text for contrast */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    color: #374151; /* Darker text for readability */
+}
+
+.table.is-striped tbody tr:nth-child(even) {
+    background: #f9fafb; /* Subtle alternating row color */
+}
+
+.table.is-hoverable tbody tr:hover {
+    background: #e5e7eb; /* Hover effect */
+    transition: background 0.2s ease;
+}
+
+.table td a {
+    color: #3b82f6; /* Bulma primary color for links */
+    text-decoration: none;
+}
+
+.table td a:hover {
+    text-decoration: underline;
+    color: #1d4ed8; /* Darker blue on hover */
 }

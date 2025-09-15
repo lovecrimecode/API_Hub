@@ -34,7 +34,7 @@
 
      <div ">
           <div class=" form-container" style="background: rgba(28, 23, 23, 0.59)">
-          <form method=" post" action="result5.php" target="result" id="pokemonForm">
+          <form method="post" action="5pokemon_info/result5.php" target="resultsFrame" id="pokemonForm">
                <div class="field">
                     <label class="label is-size-5">
                          <i class="fas fa-star mr-2"></i>
@@ -80,7 +80,7 @@
                     <p class="mt-3 has-text-weight-semibold">Buscando Pokémon...</p>
                </div>
           </div>
-          <iframe name="result" class="results-iframe" id="resultsFrame"></iframe>
+          <iframe name="resultsFrame" class="results-iframe" id="resultsFrame"></iframe>
      </div>
      <hr>
 
@@ -109,13 +109,30 @@
                const resultsFrame = document.getElementById('resultsFrame');
 
                form.addEventListener('submit', function() {
-                    loadingOverlay.classList.add('is-active');
+                    // Muestra el overlay de carga y oculta el iframe
+                    loadingOverlay.style.display = 'block';
+                    resultsFrame.style.display = 'none';
 
-                    // Hide loading after iframe loads
+                    // Escucha el evento 'load' del iframe
                     resultsFrame.addEventListener('load', function() {
+                         // Oculta el overlay de carga
                          setTimeout(() => {
-                              loadingOverlay.classList.remove('is-active');
+                              loadingOverlay.style.display = 'none';
                          }, 500);
+
+                         // Muestra el iframe
+                         resultsFrame.style.display = 'block';
+
+                         // Ajusta la altura del iframe al contenido cargado
+                         try {
+                              const iframeDoc = resultsFrame.contentDocument || resultsFrame.contentWindow.document;
+                              const contentHeight = iframeDoc.body.scrollHeight;
+                              resultsFrame.style.height = `${contentHeight}px`;
+                         } catch (e) {
+                              console.error("No se pudo ajustar la altura del iframe. Posible error de Same-Origin Policy.", e);
+                              // Establece una altura fija si no se puede acceder al contenido del iframe
+                              resultsFrame.style.height = '600px';
+                         }
                     });
                });
 

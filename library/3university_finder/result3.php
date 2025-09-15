@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/library/template/style.css">
-    <title>Resultados - Universidades por País</title>
-</head>
-
-<body>
 
     <?php
     $country = isset($_POST['country']) ? trim($_POST['country']) : '';
@@ -20,24 +10,36 @@
             <i class="fas fa-exclamation-triangle fa-3x mb-3"></i>
             <h1 class="title has-text-white">Error</h1>
             <p class="subtitle has-text-white">Debes ingresar un país válido</p>
-            <p>Por favor, regresa y completa el formulario correctamente.</p>
-          </div>';
-        echo '<script>setTimeout(() => window.parent.location.reload(), 3000);</script>';
+            <button class="button is-primary is-rounded mt-3" onclick="window.parent.document.getElementById(\'universityForm\').reset();">
+                <i class="fas fa-redo mr-2"></i>
+                Intentar de nuevo
+            </button>
+        </div>';
         exit();
     }
 
     $countryEncoded = urlencode(str_replace(" ", "+", $country));
     $url = "http://universities.hipolabs.com/search?country=" . $countryEncoded;
 
-    $response = @file_get_contents($url);
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
 
-    if ($response === FALSE) {
+    if ($response === FALSE || $httpCode !== 200) {
         echo '<div class="error-container">
             <i class="fas fa-wifi fa-3x mb-3"></i>
             <h1 class="title has-text-white">Error de conexión</h1>
             <p class="subtitle has-text-white">No se pudo conectar con el servicio</p>
             <p>Por favor, verifica tu conexión a internet e intenta nuevamente.</p>
-          </div>';
+            <button class="button is-primary is-rounded mt-3" onclick="window.parent.document.getElementById(\'universityForm\').reset();">
+                <i class="fas fa-redo mr-2"></i>
+                Intentar de nuevo
+            </button>
+        </div>';
         exit();
     }
 
@@ -47,17 +49,21 @@
         echo '<div class="error-container">
             <i class="fas fa-question fa-3x mb-3"></i>
             <h1 class="title has-text-white">No encontrado</h1>
-            <p class="subtitle has-text-white">No se encontraron universidades para este país</p>
-            <p>Verifica el nombre del país (en inglés) e intenta nuevamente.</p>
-          </div>';
+            <p class="subtitle has-text-white">No se encontraron universidades para "' . htmlspecialchars($country) . '"</p>
+            <p>Verifica el nombre del país (en inglés, e.g., "United States") e intenta nuevamente.</p>
+            <button class="button is-primary is-rounded mt-3" onclick="window.parent.document.getElementById(\'universityForm\').reset();">
+                <i class="fas fa-redo mr-2"></i>
+                Intentar de nuevo
+            </button>
+        </div>';
         exit();
     }
 
     $bgGradient = 'var(--neutral-gradient)';
     ?>
-
     <script>
         document.body.style.background = '<?php echo $bgGradient; ?>';
+        window.parent.document.getElementById('resultsFrame').classList.add('loaded');
     </script>
 
     <div class="result-container">
@@ -85,12 +91,12 @@
                                 <td><?php echo htmlspecialchars($university['name']); ?></td>
                                 <td>
                                     <?php foreach ($university['web_pages'] as $web): ?>
-                                        <a href="<?php echo htmlspecialchars($web); ?>" target="_blank"><?php echo htmlspecialchars($web); ?></a><br>
+                                        <a href="<?php echo htmlspecialchars($web); ?>" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars($web); ?></a><br>
                                     <?php endforeach; ?>
                                 </td>
                                 <td>
                                     <?php foreach ($university['domains'] as $domain): ?>
-                                        <a href="http://<?php echo htmlspecialchars($domain); ?>" target="_blank"><?php echo htmlspecialchars($domain); ?></a><br>
+                                        <a href="http://<?php echo htmlspecialchars($domain); ?>" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars($domain); ?></a><br>
                                     <?php endforeach; ?>
                                 </td>
                             </tr>
@@ -100,14 +106,27 @@
             </div>
 
             <div class="has-text-centered mt-4">
-                <button class="button is-primary is-rounded" onclick="window.parent.location.reload()">
+                <button class="button is-primary is-rounded" onclick="window.parent.document.getElementById('universityForm').reset();">
                     <i class="fas fa-redo mr-2"></i>
                     Buscar otro país
                 </button>
             </div>
         </div>
     </div>
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate table rows
+            const rows = document.querySelectorAll('.table tbody tr');
+            rows.forEach((row, index) => {
+                row.style.opacity = 0;
+                row.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    row.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    row.style.opacity = 1;
+                    row.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
 
-</body>
-
-</html>
+        });
+    </script>

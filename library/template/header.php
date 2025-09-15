@@ -28,6 +28,7 @@ require_once __DIR__ . '/../template.php';
                     </a>
                </div>
 
+
                          <a class="navbar-item" href="/about.php">
                               <i class="fas fa-info-circle mr-2"></i>
                               Acerca de

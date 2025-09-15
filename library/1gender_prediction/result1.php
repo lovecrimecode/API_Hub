@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/library/template/style.css">
-    <title>Resultados - Predicción de Género</title>
-</head>
-
-<body>
 
     <?php
     $name = isset($_POST['name']) ? trim($_POST['name']) : '';
@@ -166,19 +156,7 @@
                 setTimeout(() => {
                     probabilityFill.style.width = '<?php echo $probability; ?>%';
                 }, 500);
-            }
-
-            // Add click effect to stat cards
-            const statCards = document.querySelectorAll('.stat-card');
-            statCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.98)';
-                    setTimeout(() => {
-                        this.style.transform = 'translateY(-5px)';
-                    }, 100);
-                });
-            });
-
+            }        
         });
     </script>
 

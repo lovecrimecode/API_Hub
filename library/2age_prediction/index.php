@@ -57,16 +57,6 @@ $excercise = (object) $excercise;
                </div>
           </div>
      </form>
-
-     <div class="feature-card">
-          <h4 class="has-text-weight-semibold mb-2">
-               <i class="fas fa-info-circle mr-2 has-text-info"></i>
-               ¿Cómo funciona?
-          </h4>
-          <p class="is-size-7">
-               Utilizamos la API de Agify.io que analiza nombres para estimar la edad promedio basada en datos estadísticos.
-          </p>
-     </div>
 </div>
 
 <div class="result-container">
@@ -80,7 +70,20 @@ $excercise = (object) $excercise;
      </div>
      <iframe name="result" class="results-iframe" id="resultsFrame"></iframe>
 </div>
+
 <hr>
+
+<div class="feature-card">
+     <h4 class="has-text-weight-semibold mb-2">
+          <i class="fas fa-info-circle mr-2 has-text-info"></i>
+          ¿Cómo funciona?
+     </h4>
+     <p class="is-size-7">
+          Utilizamos la API de Agify.io que analiza nombres para estimar la edad promedio basada en datos estadísticos.
+     </p>
+</div>
+
+<br>
 
 <div class="notification is-info is-light">
      <h4 class="title is-5">
@@ -107,13 +110,30 @@ $excercise = (object) $excercise;
           const resultsFrame = document.getElementById('resultsFrame');
 
           form.addEventListener('submit', function() {
-               loadingOverlay.classList.add('is-active');
+               // Muestra el overlay de carga y oculta el iframe
+               loadingOverlay.style.display = 'block';
+               resultsFrame.style.display = 'none';
 
-               // Hide loading after iframe loads
+               // Escucha el evento 'load' del iframe
                resultsFrame.addEventListener('load', function() {
+                    // Oculta el overlay de carga
                     setTimeout(() => {
-                         loadingOverlay.classList.remove('is-active');
+                         loadingOverlay.style.display = 'none';
                     }, 500);
+
+                    // Muestra el iframe
+                    resultsFrame.style.display = 'block';
+
+                    // Ajusta la altura del iframe al contenido cargado
+                    try {
+                         const iframeDoc = resultsFrame.contentDocument || resultsFrame.contentWindow.document;
+                         const contentHeight = iframeDoc.body.scrollHeight;
+                         resultsFrame.style.height = `${contentHeight}px`;
+                    } catch (e) {
+                         console.error("No se pudo ajustar la altura del iframe. Posible error de Same-Origin Policy.", e);
+                         // Establece una altura fija si no se puede acceder al contenido del iframe
+                         resultsFrame.style.height = '600px';
+                    }
                });
           });
 
