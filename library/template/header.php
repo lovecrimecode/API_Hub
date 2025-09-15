@@ -10,7 +10,7 @@ require_once __DIR__ . '/../template.php';
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="stylesheet" href="/library/template/style.css">
-     <title>10 APIs</title>
+     <title>APIs Hub</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@ require_once __DIR__ . '/../template.php';
                <div class="navbar-brand">
                     <a class="navbar-item" href="/">
                          <i class="fas fa-code mr-2"></i>
-                         APIs
+                         APIs Hub
                     </a>
 
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
