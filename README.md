@@ -3,7 +3,7 @@
 **API Hub** es un portal web dinámico y responsivo desarrollado en PHP que integra **10 APIs externas** para ofrecer experiencias interactivas y educativas. Este proyecto es una demostración de la integración de APIs, el desarrollo web moderno y la creación de interfaces intuitivas. 
 
 <div align="center">
-  <img src="https://github.com/lovecrimecode/API_Hub/demo-screenshot.png" alt="Demo del Proyecto" width="800">
+  <img src="https://github.com/lovecrimecode/API_Hub/blob/main/demo-screenshot.png" alt="Demo del Proyecto" width="800">
   <br>
 </div>
 
