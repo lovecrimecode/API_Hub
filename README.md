@@ -18,15 +18,15 @@
 
 | # | Herramienta | Descripción | API Usada |
 |---|-------------|-------------|-----------|
-| 1 | 👦👧**Predicción de Género**  | Predice el género basado en un nombre con probabilidades estadísticas. | [Genderize.io](https://api.genderize.io/?name={...}) |
-| 2 | 🎂**Predicción de Edad**  | Estima la edad promedio por nombre usando datos demográficos. | [Agify.io](https://api.agify.io/?name={...}) |
-| 3 | 🎓**Universidades por País**  | Lista universidades con sitios web y dominios. | [Hipolabs Universities](http://universities.hipolabs.com/search?country={...}) |
-| 4 | 🌦️**Clima en RD**  | Clima actual en ciudades dominicanas. | [WeatherAPI](https://api.weatherapi.com/) |
-| 5 | ⚡**Info de Pokémon**  | Detalles completos: imagen, habilidades y stats. | [PokéAPI](https://pokeapi.co/api/v2/pokemon/{...}) |
-| 6 | 📰**Noticias de WordPress**  | Últimas publicaciones de sitios como NASA o TechCrunch. | [WordPress REST API]({site}/wp-json/wp/v2/posts) |
-| 7 | 💰**Conversión de Monedas**  | USD a DOP con tasas en tiempo real. | [ExchangeRate-API](https://api.exchangerate-api.com/v4/latest/USD) |
-| 8 | 🖼️**Generador de Imágenes IA**  | Crea arte desde texto con IA. | [ImagePig API](https://api.imagepig.com/) |
-| 9 | 🌍**Datos de un País**  | Población, capital, bandera y más. | [RestCountries](https://restcountries.com/v3.1/name/{...}) | 
+| 1 | 👦👧**Predicción de Género**  | Predice el género basado en un nombre con probabilidades estadísticas. | [Genderize.io](https://genderize.io/) |
+| 2 | 🎂**Predicción de Edad**  | Estima la edad promedio por nombre usando datos demográficos. | [Agify.io](https://agify.io/) |
+| 3 | 🎓**Universidades por País**  | Lista universidades con sitios web y dominios. | [Hipolabs Universities](http://universities.hipolabs.com/) |
+| 4 | 🌦️**Clima en RD**  | Clima actual en ciudades dominicanas. | [WeatherAPI](https://www.weatherapi.com/) |
+| 5 | ⚡**Info de Pokémon**  | Detalles completos: imagen, habilidades y stats. | [PokéAPI](https://pokeapi.co) |
+| 6 | 📰**Noticias de WordPress**  | Últimas publicaciones de sitios como NASA o TechCrunch. | WordPress |
+| 7 | 💰**Conversión de Monedas**  | USD a DOP con tasas en tiempo real. | [ExchangeRate-API](https://www.exchangerate-api.com/) |
+| 8 | 🖼️**Generador de Imágenes IA**  | Crea arte desde texto con IA. | [ImagePig API](https://imagepig.com/) |
+| 9 | 🌍**Datos de un País**  | Población, capital, bandera y más. | [RestCountries](https://restcountries.com) | 
 | 10 | 🤣**Generador de Chistes**  | Chistes aleatorios en inglés para un toque de humor. | [Official Joke API](https://official-joke-api.appspot.com/random_joke) |
 
 
@@ -44,7 +44,7 @@ Elegí estas tecnologías para equilibrar simplicidad, rendimiento y escalabilid
 
 - **APIs Externas** 🌐 10 APIs gratuitas. Demuestran manejo de solicitudes HTTP, manejo de errores y optimización de respuestas JSON.
 
-## 📦 **Instalación Rápida**
+## 📦 **Instalación**
 
 1. **Clona el Repo**:
    ```bash
