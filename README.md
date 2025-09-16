@@ -21,7 +21,7 @@
 | 1 | 👦👧**Predicción de Género**  | Predice el género basado en un nombre con probabilidades estadísticas. | [Genderize.io](https://api.genderize.io/?name={...}) |
 | 2 | 🎂**Predicción de Edad**  | Estima la edad promedio por nombre usando datos demográficos. | [Agify.io](https://api.agify.io/?name={...}) |
 | 3 | 🎓**Universidades por País**  | Lista universidades con sitios web y dominios. | [Hipolabs Universities](http://universities.hipolabs.com/search?country={...}) |
-| 4 | 🌦️**Clima en RD**  | Clima actual en ciudades dominicanas, con fondos dinámicos. | [WeatherAPI](https://api.weatherapi.com/) |
+| 4 | 🌦️**Clima en RD**  | Clima actual en ciudades dominicanas. | [WeatherAPI](https://api.weatherapi.com/) |
 | 5 | ⚡**Info de Pokémon**  | Detalles completos: imagen, habilidades y stats. | [PokéAPI](https://pokeapi.co/api/v2/pokemon/{...}) |
 | 6 | 📰**Noticias de WordPress**  | Últimas publicaciones de sitios como NASA o TechCrunch. | [WordPress REST API]({site}/wp-json/wp/v2/posts) |
 | 7 | 💰**Conversión de Monedas**  | USD a DOP con tasas en tiempo real. | [ExchangeRate-API](https://api.exchangerate-api.com/v4/latest/USD) |
@@ -34,20 +34,15 @@
 
 Elegí estas tecnologías para equilibrar simplicidad, rendimiento y escalabilidad, haciendo el proyecto accesible para principiantes mientras demuestra habilidades avanzadas.
 
-- **PHP 8+** 💙  
-  *¿Por qué?* PHP es el backbone del servidor: maneja formularios, integra APIs con `file_get_contents` y `curl`, y procesa JSON dinámicamente. Su ecosistema maduro (sin frameworks pesados) permite un código limpio y rápido, ideal para prototipos educativos. ¡PHP me permitió enfocarme en la lógica de negocio sin distracciones!
+- **PHP 8+** 💙 es la base del servidor: maneja formularios, integra APIs con `file_get_contents` y `curl`, y procesa JSON dinámicamente.
+  
+- **Bulma CSS** 🎨 es unframework CSS ligero y modular para layouts responsivos. Ofrece componentes listos como cards, tablas y modales sin JavaScript, asegurando compatibilidad cross-browser.
 
-- **Bulma CSS** 🎨  
-  *¿Por qué?* Un framework CSS ligero y modular para layouts responsivos. Ofrece componentes listos como cards, tablas y modales sin JavaScript, asegurando compatibilidad cross-browser. Elegí Bulma por su simplicidad (no Sass requerido) y diseño minimalista, que hace que el portal se vea profesional en móviles y desktops.
+- **Font Awesome 6** 🔍 brinda íconos vectoriales escalables que añaden personalidad. Su biblioteca gratuita y fácil integración con Bulma eleva la UX sin peso extra.
 
-- **Font Awesome 6** 🔍  
-  *¿Por qué?* Para íconos vectoriales escalables que añaden personalidad (e.g., `fa-venus-mars` para género). Su biblioteca gratuita y fácil integración con Bulma eleva la UX sin peso extra.
+- **JavaScript** ⚡para interactividad ligera: overlays de carga, ajuste dinámico de iframes y validación de Enter. Evité librerías pesadas para mantener el proyecto liviano.
 
-- **JavaScript** ⚡  
-  *¿Por qué?* Para interactividad ligera: over lays de carga, ajuste dinámico de iframes y validación de Enter. Evité librerías pesadas para mantener el proyecto liviano, destacando mi habilidad en JS puro para animaciones suaves.
-
-- **APIs Externas** 🌐  
-  *¿Por qué?* El corazón del proyecto: 10 APIs gratuitas para diversidad (datos, IA, entretenimiento). Demuestran integración, manejo de errores y optimización de respuestas JSON.
+- **APIs Externas** 🌐 10 APIs gratuitas. Demuestran manejo de solicitudes HTTP, manejo de errores y optimización de respuestas JSON.
 
 ## 📦 **Instalación Rápida**
 
@@ -72,8 +67,3 @@ Elegí estas tecnologías para equilibrar simplicidad, rendimiento y escalabilid
 - **Predicción de Género**: Ingresa "Juan" → "Masculino (95% probabilidad)".
 - **Generador de Imágenes**: "Gato astronauta" → Imagen IA generada al instante.
 - **Datos de País**: "Mexico" → Población: 126M, Capital: CDMX, Bandera: 🇲🇽.
-
-Explora el [demo en vivo](https://lovecrimecode.github.io/prog_web_tarea5)
-## 📄 **Licencia**
-
-MIT License – Usa, modifica y comparte libremente. © 2025 Zelidee Guemez (lovecrimecode).
