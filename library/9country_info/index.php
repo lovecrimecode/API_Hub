@@ -48,7 +48,6 @@ $excercise = (object) $excercise;
                          <i class="fas fa-globe"></i>
                     </span>
                </div>
-               <p class="help">Buscaremos información detallada del país especificado</p>
           </div>
 
           <div class="field">

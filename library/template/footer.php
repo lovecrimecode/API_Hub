@@ -1,38 +1,38 @@
-</section> 
+</section>
 
 <footer class="footer has-background-dark">
-          <div class="columns">
+     <div class="columns">
 
-               <div class="column is-6">
-                    <h4 class="title is-5 has-text-white">
-                         <i class="fas fa-tools mr-2"></i>
-                         Tecnologías
-                    </h4>
-                    <div class="tags">
-                         <span class="tag is-primary">PHP</span>
-                         <span class="tag is-info">Bulma CSS</span>
-                         <span class="tag is-success">JavaScript</span>
-                         <span class="tag is-warning">API REST</span>
-                         <span class="tag is-danger">HTML5</span>
-                         <span class="tag is-link">CSS3</span>
-                    </div>
-               </div>
-
-               <div class="column is-6">
-                    <h4 class="title is-5 has-text-white">
-                         <i class="fas fa-info-circle mr-2"></i>
-                         Información
-                    </h4>
-                    <p class="has-text-grey-light">
-                         <i class="fas fa-calendar mr-1"></i>
-                         Desarrollado en <?php echo date('Y'); ?>
-                    </p>
-                    <p class="has-text-grey-light">
-                         <i class="fas fa-user mr-1"></i>
-                         Proyecto académico
-                    </p>
+          <div class="column is-6">
+               <h4 class="title is-5 has-text-white">
+                    <i class="fas fa-tools mr-2"></i>
+                    Tecnologías
+               </h4>
+               <div class="tags">
+                    <span class="tag is-primary">PHP</span>
+                    <span class="tag is-info">Bulma CSS</span>
+                    <span class="tag is-success">JavaScript</span>
+                    <span class="tag is-warning">API REST</span>
+                    <span class="tag is-danger">HTML5</span>
+                    <span class="tag is-link">CSS3</span>
                </div>
           </div>
+
+          <div class="column is-6">
+               <h4 class="title is-5 has-text-white">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Información
+               </h4>
+               <p class="has-text-grey-light">
+                    <i class="fas fa-user mr-1"></i>
+                    Hecho por Zelidee Guemez henriquez
+               </p>
+               <p class="has-text-grey-light">
+                    <i class="fas fa-calendar mr-1"></i>
+                    Desarrollado en 2025
+               </p>
+          </div>
+     </div>
 </footer>
 
 <style>
@@ -83,7 +83,6 @@
      document.addEventListener('mousedown', function() {
           document.body.classList.remove('keyboard-navigation');
      });
-     
 </script>
 
 </body>

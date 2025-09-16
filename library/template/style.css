@@ -375,45 +375,65 @@ body {
     margin: 1.5rem 0;
     overflow-x: auto; /* Ensures responsiveness for wide tables */
 }
+/* Table Container */
+.table-container {
+     margin: 1.5rem 0;
+     overflow-x: auto;
+     border-radius: 12px;
+     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.10);
+     background: #f8f9ff;
+     padding: 1rem;
+}
 
 /* Table Styles */
 .table {
-    background: #ffffff;
-    border-radius: 6px;
-    border: 1px solid #e5e7eb; /* Light border for definition */
+     width: 100%;
+     border-collapse: separate;
+     border-spacing: 0;
+     background: #fff;
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+     border: 1px solid #d4d9ff;
 }
 
 .table th {
-    background: #f1f5f9; /* Light gray for headers */
-    color: #1f2937; /* Dark text for contrast */
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    padding: 0.75rem;
+     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+     color: #fff;
+     font-weight: 700;
+     text-transform: uppercase;
+     font-size: 1rem;
+     padding: 1rem;
+     border-bottom: 2px solid #d4d9ff;
+     letter-spacing: 0.5px;
 }
 
 .table td {
-    vertical-align: middle;
-    padding: 0.75rem;
-    font-size: 0.95rem;
-    color: #374151; /* Darker text for readability */
+     vertical-align: middle;
+     padding: 1rem;
+     font-size: 1rem;
+     color: #102a45;
+     border-bottom: 1px solid #e5e7eb;
+     background: #f8f9ff;
+     transition: background 0.2s;
 }
 
-.table.is-striped tbody tr:nth-child(even) {
-    background: #f9fafb; /* Subtle alternating row color */
+.table.is-striped tbody tr:nth-child(even) td {
+     background: #eef2fb;
 }
 
-.table.is-hoverable tbody tr:hover {
-    background: #e5e7eb; /* Hover effect */
-    transition: background 0.2s ease;
+.table.is-hoverable tbody tr:hover td {
+     background: #e0e7ff;
 }
 
 .table td a {
-    color: #3b82f6; /* Bulma primary color for links */
-    text-decoration: none;
+     color: #667eea;
+     font-weight: 600;
+     text-decoration: none;
+     transition: color 0.2s;
 }
 
 .table td a:hover {
-    text-decoration: underline;
-    color: #1d4ed8; /* Darker blue on hover */
+     text-decoration: underline;
+     color: #764ba2;
 }

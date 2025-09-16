@@ -7,7 +7,7 @@ Template::apply();
                     <div class="icon-wrapper">
                          <i class="fas fa-rocket fa-3x"></i>
                     </div>
-                    <h1 class="title has-text-white is-size-2">10 APIs</h1>
+                    <h1 class="title has-text-white is-size-2">API Hub</h1>
                     <h2 class="subtitle has-text-white is-size-5">Explora herramientas interactivas impulsadas por APIs</h2>
                </div>
 
@@ -37,25 +37,3 @@ Template::apply();
                ?>
           </div>
      </div>
-
-<hr>
-
-<div class="container">
-     <div class="notification is-info is-light">
-          <h4 class="title is-5">
-               <i class="fas fa-lightbulb mr-2"></i>
-               ¿Qué es esto?
-          </h4>
-          <div class="columns">
-               <div class="column">
-                    <p><strong>APIs:</strong> Conexiones a datos en tiempo real</p>
-               </div>
-               <div class="column">
-                    <p><strong>Interactividad:</strong> Formularios y resultados dinámicos</p>
-               </div>
-               <div class="column">
-                    <p><strong>Variedad:</strong> Explora géneros, edades, clima, Pokémon y más</p>
-               </div>
-          </div>
-     </div>
-</div>
